@@ -67,7 +67,7 @@
       %label.col-sm-2.control-label{for: "csv_options_skip_header"}= t('admin.export.csv.skip_header')
       .col-sm-10.controls
         .checkbox
-          %label{style: 'display: block;' }
+          %label
             = check_box_tag 'csv_options[skip_header]', 'true'
         %p.help-block= t('admin.export.csv.skip_header_help')
 
