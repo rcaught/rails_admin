@@ -155,7 +155,7 @@ module RailsAdmin
     def bulk_menu(abstract_model = @abstract_model)
       actions = actions(:bulkable, abstract_model)
       return '' if actions.empty?
-      content_tag :li, class: 'dropdown', style: 'float:right' do
+      content_tag :li, class: 'dropdown pull-right' do
         content_tag(:a, class: 'dropdown-toggle', data: {toggle: 'dropdown'}, href: '#') { t('admin.misc.bulk_menu_title').html_safe + ' ' + '<b class="caret"></b>'.html_safe } +
           content_tag(:ul, class: 'dropdown-menu dropdown-filters') do
             actions.collect do |action|

@@ -19,7 +19,7 @@
 - content_for :contextual_tabs do
   = bulk_menu
   - if filterable_fields.present?
-    %li.dropdown{style: 'float:right'}
+    %li.dropdown.pull-right
       %a.dropdown-toggle{href: '#', :'data-toggle' => "dropdown"}
         = t('admin.misc.add_filter')
         %b.caret
@@ -57,7 +57,7 @@
           %button#remove_filter.btn.btn-info{title: "Reset filters"}
             %i.icon-white.icon-remove
       - if export_action
-        %span{style: 'float:right'}= link_to wording_for(:link, export_action), export_path(params.except('set').except('page')), class: 'btn btn-info'
+        %span.pull-right= link_to wording_for(:link, export_action), export_path(params.except('set').except('page')), class: 'btn btn-info'
 
   - unless @model_config.list.scopes.empty?
     %ul.nav.nav-tabs#scope_selector
