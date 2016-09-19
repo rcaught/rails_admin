@@ -64,3 +64,11 @@ a.label {
 .label-danger {
   @include label-variant($label-danger-bg);
 }
+
+#loading {
+  display:none;
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:100000;
+}
