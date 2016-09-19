@@ -145,7 +145,7 @@ module RailsAdmin
           <li title="#{wording if only_icon}" rel="#{'tooltip' if only_icon}" class="icon #{action.key}_#{parent}_link #{'active' if current_action?(action)}">
             <a class="#{action.pjax? ? 'pjax' : ''}" href="#{rails_admin.url_for(action: action.action_name, controller: 'rails_admin/main', model_name: abstract_model.try(:to_param), id: (object.try(:persisted?) && object.try(:id) || nil))}">
               <i class="#{action.link_icon}"></i>
-              <span#{only_icon ? " style='display:none'" : ''}>#{wording}</span>
+              <span#{only_icon ? " class='hidden'" : ''}>#{wording}</span>
             </a>
           </li>
         )

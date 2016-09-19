@@ -30,7 +30,7 @@ module RailsAdmin
 
       @template.content_tag :fieldset do
         contents = []
-        contents << @template.content_tag(:legend, %(<i class="icon-chevron-#{(fieldset.active? ? 'down' : 'right')}"></i> #{fieldset.label}).html_safe, style: fieldset.name == :default ? 'display:none' : '')
+        contents << @template.content_tag(:legend, %(<i class="icon-chevron-#{(fieldset.active? ? 'down' : 'right')}"></i> #{fieldset.label}).html_safe, class: fieldset.name == :default ? 'hidden' : '')
         contents << @template.content_tag(:p, fieldset.help) if fieldset.help.present?
         contents << fields.collect { |field| field_wrapper_for(field, nested_in) }.join
         contents.join.html_safe
@@ -83,7 +83,7 @@ module RailsAdmin
           object.send(model_config.object_label_method).presence || "#{model_config.label} ##{object.id}"
         end
       end
-      %(<span style="display:none" class="object-infos" data-model-label="#{model_label}" data-object-label="#{CGI.escapeHTML(object_label.to_s)}"></span>).html_safe
+      %(<span class="hidden" class="object-infos" data-model-label="#{model_label}" data-object-label="#{CGI.escapeHTML(object_label.to_s)}"></span>).html_safe
     end
 
     def jquery_namespace(field)

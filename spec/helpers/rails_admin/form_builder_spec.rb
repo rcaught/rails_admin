@@ -23,14 +23,14 @@ describe 'RailsAdmin::FormBuilder', type: :helper do
     end
 
     it 'returns a tag with infos' do
-      expect(@builder.object_infos).to eql '<span style="display:none" class="object-infos" data-model-label="Fan" data-object-label="foo"></span>'
+      expect(@builder.object_infos).to eql '<span class="hidden" class="object-infos" data-model-label="Fan" data-object-label="foo"></span>'
     end
 
     context 'when object_label\'s type is symbol' do
       before { @object.name = :foo }
 
       it 'does not break' do
-        expect(@builder.object_infos).to eql '<span style="display:none" class="object-infos" data-model-label="Fan" data-object-label="foo"></span>'
+        expect(@builder.object_infos).to eql '<span class="hidden" class="object-infos" data-model-label="Fan" data-object-label="foo"></span>'
       end
     end
   end
